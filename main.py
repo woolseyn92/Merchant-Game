@@ -13,6 +13,10 @@ class Store:
         self.customer_list = customer_list
         self.product_list = product_list
 
+    def buy_product(self, product, amount):
+        cost = product.buy(amount)
+        self.liquid_cash -= cost
+
 store = Store("Buy Mart", 1, 5000, 5000, 0, [], [], [])
 welcome_string = (f"Welcome to {store.name}!\n"
                   f"You have {store.employees} employees.\n"

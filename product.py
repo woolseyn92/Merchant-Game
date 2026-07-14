@@ -1,6 +1,3 @@
-from main import Store, store
-
-
 class Product:
     def __init__(self, wholesale_price, retail_price, name, description, demand, supply, inventory):
         self.wholesale_price = wholesale_price
@@ -23,10 +20,9 @@ class Product:
     def buy(self, amount):
         self.inventory += amount
         self.supply -= amount
-        store.liquid_cash -= amount * self.wholesale_price
-
+        return amount * self.wholesale_price
 
 
 class Grocery(Product):
     def __init__(self, wholesale_price, retail_price, name, description, demand, supply, inventory):
-        super.__init__(wholesale_price, retail_price, name, description, demand, supply, inventory)
+        super().__init__(wholesale_price, retail_price, name, description, demand, supply, inventory)
