@@ -22,6 +22,12 @@ class Product:
         self.supply -= amount
         return amount * self.wholesale_price
 
+    def sell(self, amount):
+        self.inventory -= amount
+        self.demand += 0.01 * amount
+        return amount * self.retail_price
+
+
 
 class Grocery(Product):
     def __init__(self, wholesale_price, retail_price, name, description, demand, supply, inventory):
